@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planning Télétravail</title>
+    <meta name="description" content="">
+    <meta name="author" content="Stéphane Wouters">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="assets/styles.css?v=1.0">
+</head>
+<body>
+
+<div id="app" style="display: none">
+
+    <table>
+        <thead>
+            <tr>
+                <td class="title" colspan="11">
+                    <button v-on:click="moveWeek(-1)"><<</button>
+                    Semaine {{ currentWeekID.split('_')[1] }}
+                    <button v-on:click="moveWeek(+1)">>></button>
+                </td>
+            </tr>
+            <tr class="daysofweek">
+                <td></td>
+                <td colspan="2" v-for="idx in 5" :set="day = monday.addDay(idx-1) ">
+                    {{ day.getDate() }} / {{ day.getMonth() }}
+                </td>
+            </tr>
+            <tr class="ampm">
+                <td></td>
+                <td v-for="idx in 10">{{ idx % 2 == 1 ? 'AM' : 'PM'}}</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class="line-name" v-for="(cases, name) in calendar">
+            <td class="name">{{ name }}</td>
+            <td v-for="(v, k) in cases">
+                <div class="d" :value="v"
+                 v-on:click="toggleRemote(name, k)"
+                 @contextmenu="toggleAbsent($event, name, k)">
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="assets/main.js"></script>
+
+</body>
+</html>

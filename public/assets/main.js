@@ -12,6 +12,13 @@ Date.prototype.addDay = function(i) {
     date.setDate(date.getDate() + i);
     return date;
 }
+Date.prototype.getFullMonth = function(i) {
+    const m = this.getMonth() + 1;
+    return (m < 10) ? '0' + m : m;
+}
+Date.prototype.getDayName = function() {
+    return ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'][this.getDay() - 1];
+}
 
 const now = new Date();
 const socket = io();

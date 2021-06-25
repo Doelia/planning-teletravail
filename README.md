@@ -11,5 +11,10 @@ node app.js
 # Docker
 ```
 export USERNAMES="Stéphane,Vincent,Patrice"
-docker run -p 3000:3000 -it --rm -e USERNAMES=$USERNAMES -v $(pwd)/planning-datas:/usr/src/app/var --name planning-teletravail doelia/planning-teletravail
+docker pull doelia/planning-teletravail
+docker run -p 3000:3000 -d --rm \
+    -e USERNAMES=$USERNAMES \
+    -v $(pwd)/planning-datas:/usr/src/app/var \
+    --name planning-teletravail \
+    doelia/planning-teletravail
 ```

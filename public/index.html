@@ -25,7 +25,8 @@
             <tr class="daysofweek">
                 <td></td>
                 <td colspan="2" v-for="idx in 5" :set="day = monday.addDay(idx-1) ">
-                    {{ day.getDate() }} / {{ day.getMonth() }}
+                    <span style="font-weight: normal">{{ day.getDayName() }}</span>
+                    {{ day.getDate() }}/{{ day.getFullMonth() }}
                 </td>
             </tr>
             <tr class="ampm">

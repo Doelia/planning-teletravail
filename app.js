@@ -32,6 +32,7 @@ io.on('connection', (socket) => {
 
 server.listen(PORT, () => {
     console.log(`Planning teletravail app listening at port ${PORT}`)
+    console.log('Usernames loaded', USERNAMES)
 });
 
 function getCalendar(namefile) {

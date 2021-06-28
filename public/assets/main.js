@@ -37,17 +37,16 @@ var app = new Vue({
                 this.calendar = calendar;
             }
         },
-        toggleRemote(name, k) {
-            this.calendar[name][k]++;
-            this.calendar[name][k] %= 2;
+        leftClick(name, k) {
+            this.calendar[name][k] = this.calendar[name][k] === 1 ? 2 : 1;
             socket.emit('UPDATE', {
                 weekID: this.currentWeekID,
                 calendar: this.calendar,
             });
         },
-        toggleAbsent($e, name, k) {
+        rightClick($e, name, k) {
             $e.preventDefault();
-            this.calendar[name][k] = this.calendar[name][k] !== 2 ? 2 : 0;
+            this.calendar[name][k] = this.calendar[name][k] === 0 ? 3 : 0;
             socket.emit('UPDATE', {
                 weekID: this.currentWeekID,
                 calendar: this.calendar,

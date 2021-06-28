@@ -39,8 +39,8 @@
             <td class="name">{{ name }}</td>
             <td v-for="(v, k) in cases">
                 <div class="d" :value="v"
-                 v-on:click="toggleRemote(name, k)"
-                 @contextmenu="toggleAbsent($event, name, k)">
+                 v-on:click="leftClick(name, k)"
+                 @contextmenu="rightClick($event, name, k)">
                 </div>
             </td>
         </tr>

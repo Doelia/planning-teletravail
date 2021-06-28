@@ -68,11 +68,15 @@ td:nth-child(2n+1)  {
     padding-right: 10px;
 }
 
-.d[value="0"] { background-color: #1c4e4c; }
-.d[value="0"]:after { content: "Bureau" }
+.d[value="0"] { background-color: #b1b1b1; }
+.d[value="0"]:after { content: "N.D" }
 
-.d[value="1"] { background-color: #d89c68; }
-.d[value="1"]:after { content: "Remote" }
+.d[value="1"] { background-color: #1c4e4c; }
+.d[value="1"]:after { content: "Bureau" }
 
-.d[value="2"] { background-color: #cf1838; }
-.d[value="2"]:after { content: "Absent" }
+.d[value="2"] { background-color: #d89c68; }
+.d[value="2"]:after { content: "Remote" }
+
+.d[value="3"] { background-color: #cf1838; }
+.d[value="3"]:after { content: "Absent" }
+

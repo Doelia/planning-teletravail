@@ -68,8 +68,9 @@ td:nth-child(2n+1)  {
     padding-right: 10px;
 }
 
-.d[value="0"] { background-color: #b1b1b1; }
-.d[value="0"]:after { content: "N.D" }
+.d[value="0"] { background-color: #262626; color: #747373
+}
+.d[value="0"]:after { content: "?"; }
 
 .d[value="1"] { background-color: #1c4e4c; }
 .d[value="1"]:after { content: "Bureau" }

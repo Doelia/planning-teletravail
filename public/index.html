@@ -24,9 +24,9 @@
             </tr>
             <tr class="daysofweek">
                 <td></td>
-                <td colspan="2" v-for="idx in 5" :set="day = monday.addDay(idx-1) ">
-                    <span style="font-weight: normal">{{ day.getDayName() }}</span>
-                    {{ day.getDate() }}/{{ day.getFullMonth() }}
+                <td colspan="2" v-for="idx in 5">
+                    <span style="font-weight: normal">{{ getDay(idx).getDayName() }}</span>
+                    {{ getDay(idx).getDate() }}/{{ getDay(idx).getFullMonth() }}
                 </td>
             </tr>
             <tr class="ampm">
@@ -48,7 +48,7 @@
     </table>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="assets/main.js"></script>
 

@@ -31,6 +31,9 @@ var app = new Vue({
         monday: now.getLastMonday(),
     },
     methods: {
+        getDay(idx) {
+            return this.monday.addDay(idx-1);
+        },
         onNewCalendarData: function(weekID, calendar) {
             if (weekID === this.currentWeekID) {
                 document.getElementById('app').style.display = 'block';

@@ -17,7 +17,7 @@ Date.prototype.getFullMonth = function(i) {
     return (m < 10) ? '0' + m : m;
 }
 Date.prototype.getDayName = function() {
-    return ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'][this.getDay() - 1];
+    return ['Lundi', 'Mardi', 'Mercr.', 'Jeudi', 'Vendr.', 'Samedi', 'Dimanche'][this.getDay() - 1];
 }
 
 const now = new Date();
